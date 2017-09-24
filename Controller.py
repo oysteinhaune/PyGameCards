@@ -26,3 +26,6 @@ class Controller():
                             self.new_score = self.main_model.score + 1
                             self.main_model.setScore(self.new_score)
                             self.main_model.setCards(self.cardFactory.generate4Cards())
+
+// Dette er en endring
+hello = 10
