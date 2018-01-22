@@ -11,7 +11,6 @@ class Main(object):
         pygame.init() # Initializes the pygame class.
 
         self.isRunning = True
-
         self.model = Model() #3
         self.controller = Controller(self.model) #5
         self.drawer = Drawer(self.model) #7

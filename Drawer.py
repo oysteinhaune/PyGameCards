@@ -10,7 +10,7 @@ class Drawer(object):
         self.screen = pygame.display.set_mode([self.model.screen_width, self.model.screen_height])
 
         pygame.font.init()
-        self.myfont = pygame.font.SysFont('Comic Sans MS', 30)
+        self.myfont = pygame.font.SysFont('Times New Roman', 50)
 
     def draw(self):
 
@@ -24,9 +24,10 @@ class Drawer(object):
         for model in self.model.getAllModels():
             self.screen.blit(model.image, model.get_pos())
 
-        #Draw score
-        textsurface = self.myfont.render('Score: '+ str(self.model.score), False, (0, 0, 0))
-        self.screen.blit(textsurface, (300, 50))
+        #Draw text from model
+        self.myfont = pygame.font.SysFont('Times New Roman', self.model.text_size)
+        textsurface = self.myfont.render(self.model.text, self.model.text_aliazed, (self.model.text_blue, self.model.text_green, self.model.text_blue))
+        self.screen.blit(textsurface, (self.model.text_xpos, self.model.text_ypos))
 
         pygame.display.flip()
 
@@ -35,6 +36,5 @@ class Drawer(object):
 
     def set_background(self, newBackground):
         self.background_image = newBackground
-
 
 

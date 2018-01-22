@@ -17,3 +17,6 @@ class Background(pygame.sprite.Sprite):
 
     def set_background(self, new_background):
         self.image = new_background
+
+    def set_scaled_image(self, newBackground):
+        self.scaled_image = pygame.transform.scale(newBackground, (self.width, self.height))

@@ -15,6 +15,14 @@ class Model(object):
         self.background_color = 0, 0, 0
         self.background = Background(0, 0, self.screen_width, self.screen_height,
                                      pygame.image.load(self.background_image))
+        self.text = 'Welcome to the card click game!'
+        self.text_aliazed = False
+        self.text_red = 30
+        self.text_green = 150
+        self.text_blue = 0
+        self.text_xpos = 170
+        self.text_ypos = 120
+        self.text_size = 40
 
     def getAllModels(self):
         return self.cards
