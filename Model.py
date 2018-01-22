@@ -25,6 +25,5 @@ class Model(object):
     def setScore(self, score):
         self.score = score
 
-    def set_background(self, new_background):
-        self.background.image = new_background
+
 

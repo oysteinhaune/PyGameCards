@@ -31,5 +31,4 @@ class Controller():
                         if(model.color == 0 and self.main_model.score >= 5):
                             self.new_score = self.main_model.score - 5
                             self.main_model.setScore(self.new_score)
-                            self.new_background = 'card_blue.jpg'
-                            self.main_model.set_background('card_blue.jpg')
+                            self.main_model.background.set_background('card_blue.jpg')

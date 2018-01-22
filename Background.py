@@ -15,5 +15,5 @@ class Background(pygame.sprite.Sprite):
     def get_pos(self):
         return (self.x, self.y)
 
-    def set_scaled_image(self, newImage):
-        self.scaled_image = pygame.transform.scale(self.newImage, (self.width,self.height))
+    def set_background(self, new_background):
+        self.image = new_background
