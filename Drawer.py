@@ -1,28 +1,24 @@
 import pygame
 
-from Background import Background
 
 
 class Drawer(object):
+    #8 Creates the drawer for drawing all model objects (cards, background, etc)
     def __init__(self, model):
-        # The display
-        size = width, height = 800, 600
-        self.screen = pygame.display.set_mode(size)
-
         self.model = model
-        self.black = 0, 0, 0
 
-        self.background = Background(0,0, width, height, pygame.image.load("table.jpg"))
+        self.screen = pygame.display.set_mode([self.model.screen_width, self.model.screen_height])
 
         pygame.font.init()
         self.myfont = pygame.font.SysFont('Comic Sans MS', 30)
 
     def draw(self):
-        #Fills the screen with a default black color
-        self.screen.fill(self.black)
+
+        # Black background color
+        self.screen.fill(self.model.background_color)
 
         #Draws the background
-        self.screen.blit(self.background.scaled_image, self.background.get_pos())
+        self.screen.blit(self.model.background.scaled_image, self.model.background.get_pos())
 
         #Draws all objects to screen
         for model in self.model.getAllModels():
@@ -34,6 +30,11 @@ class Drawer(object):
 
         pygame.display.flip()
 
-
-    def getBackground(self):
+    def get_background(self):
         return self.background
+
+    def set_background(self, newBackground):
+        self.background_image = newBackground
+
+
+
